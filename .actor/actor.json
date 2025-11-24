@@ -1,0 +1,10 @@
+{
+  "actorSpecification": 1,
+  "name": "ai-code-review-agent",
+  "title": "AI Code Review Agent",
+  "description": "GPT-4 powered code review automation. Detect bugs, security vulnerabilities, code smells, and best practice violations. Get actionable suggestions for improvement. Supports TypeScript, JavaScript, Python, and more.",
+  "version": "1.0.0",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md"
+}

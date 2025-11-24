@@ -1,0 +1,27 @@
+{
+  "name": "ai-code-review-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI-powered code review agent using GPT-4. Automated code quality analysis, bug detection, security vulnerability scanning, best practices enforcement, and actionable suggestions. Save hours of manual code review.",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "tsc",
+    "dev": "tsc && node dist/main.js",
+    "test": "echo \"Tests coming soon\" && exit 0"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "apify": "^3.2.0",
+    "crawlee": "^3.7.0",
+    "openai": "^4.20.0",
+    "axios": "^1.6.0",
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

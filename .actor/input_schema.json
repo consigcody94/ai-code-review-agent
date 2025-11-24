@@ -1,0 +1,79 @@
+{
+  "title": "AI Code Review Agent Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "codeSource": {
+      "title": "Code Source",
+      "type": "string",
+      "description": "Where to get the code from",
+      "editor": "select",
+      "default": "direct",
+      "enum": ["direct", "github-pr", "github-repo", "url"],
+      "enumTitles": ["Direct Input", "GitHub Pull Request", "GitHub Repository", "URL"]
+    },
+    "codeInput": {
+      "title": "Code Input",
+      "type": "string",
+      "description": "Code to review (paste code, PR URL, repo URL, or file URL)",
+      "editor": "textarea",
+      "example": "function add(a, b) {\n  return a + b;\n}"
+    },
+    "language": {
+      "title": "Programming Language",
+      "type": "string",
+      "description": "Primary language of the code",
+      "editor": "select",
+      "default": "auto",
+      "enum": ["auto", "typescript", "javascript", "python", "java", "go", "rust", "csharp"],
+      "enumTitles": ["Auto-detect", "TypeScript", "JavaScript", "Python", "Java", "Go", "Rust", "C#"]
+    },
+    "reviewFocus": {
+      "title": "Review Focus Areas",
+      "type": "object",
+      "description": "What aspects to focus on",
+      "editor": "json",
+      "default": {
+        "bugs": true,
+        "security": true,
+        "performance": true,
+        "maintainability": true,
+        "bestPractices": true,
+        "testCoverage": false
+      }
+    },
+    "githubToken": {
+      "title": "GitHub Personal Access Token",
+      "type": "string",
+      "description": "Required for GitHub PR/repo review (optional)",
+      "editor": "textfield",
+      "isSecret": true
+    },
+    "openaiApiKey": {
+      "title": "OpenAI API Key",
+      "type": "string",
+      "description": "Your OpenAI API key for GPT-4",
+      "editor": "textfield",
+      "isSecret": true
+    },
+    "model": {
+      "title": "AI Model",
+      "type": "string",
+      "description": "OpenAI model to use",
+      "editor": "select",
+      "default": "gpt-4",
+      "enum": ["gpt-4", "gpt-4-turbo-preview", "gpt-3.5-turbo"],
+      "enumTitles": ["GPT-4", "GPT-4 Turbo", "GPT-3.5 Turbo"]
+    },
+    "outputFormat": {
+      "title": "Output Format",
+      "type": "string",
+      "description": "Format of review report",
+      "editor": "select",
+      "default": "detailed",
+      "enum": ["detailed", "summary", "inline-comments"],
+      "enumTitles": ["Detailed Report", "Summary Only", "Inline Comments"]
+    }
+  },
+  "required": ["codeSource", "codeInput", "openaiApiKey"]
+}
